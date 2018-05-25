@@ -46,52 +46,7 @@
             </ul>
             <ul class="navbar-nav navbar-nav-right">
                 <li class="nav-item dropdown">
-                    <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                        <i class="mdi mdi-email-outline"></i>
-                        <span class="count bg-warning">5</span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
-                        <h6 class="p-3 mb-0">Messages</h6>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item preview-item">
-                            <div class="preview-thumbnail">
-                                <img src="images/faces/face4.jpg" alt="image" class="profile-pic">
-                            </div>
-                            <div class="preview-item-content">
-                                <h6 class="preview-subject ellipsis">Mark sent you a message</h6>
-                                <p class="text-muted">
-                                    1 Minutes ago
-                                </p>
-                            </div>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item preview-item">
-                            <div class="preview-thumbnail">
-                                <img src="images/faces/face2.jpg" alt="image" class="profile-pic">
-                            </div>
-                            <div class="preview-item-content">
-                                <h6 class="preview-subject ellipsis">Cregh sent you a message</h6>
-                                <p class="text-muted">
-                                    15 Minutes ago
-                                </p>
-                            </div>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item preview-item">
-                            <div class="preview-thumbnail">
-                                <img src="images/faces/face3.jpg" alt="image" class="profile-pic">
-                            </div>
-                            <div class="preview-item-content">
-                                <h6 class="preview-subject ellipsis">Profile picture updated</h6>
-                                <p class="text-muted">
-                                    18 Minutes ago
-                                </p>
-                            </div>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <h6 class="p-3 mb-0 text-center">4 new messages</h6>
-                    </div>
-                </li>
+
                 <li class="nav-item dropdown">
                     <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
                         <i class="mdi mdi-bell-outline"></i>
@@ -371,7 +326,7 @@
                     <span class="nav-link">Main</span>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">
+                    <a class="nav-link" href="/">
                         <i class="icon-layout menu-icon"></i>
                         <span class="menu-title">Dashboard</span>
                         <span class="badge badge-primary badge-pill">1</span>
@@ -493,72 +448,68 @@
                                         <tr>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    <div><img src="images/faces/face2.jpg" alt="profile image"></div>
                                                     <div class="ml-3">
-                                                        <p class="mb-1">Jessica T. Phillips</p>
-                                                        <small class="text-muted">Sales Assistant</small>
+
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td><canvas id="areaChart_1" style="height:30px; max-width:130px;"></canvas></td>
-                                            <td>$450.12</td>
-                                            <td>Mar 08 2018</td>
+                                            <td>vehicle</td>
+                                            <td>450.12</td>
+                                            <td>Mar 08 2019</td>
                                         </tr>
                                         <tr>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    <div><img src="images/faces/face1.jpg" alt="profile image"></div>
+
                                                     <div class="ml-3">
                                                         <p class="mb-1">Luke J. Sain</p>
-                                                        <small class="text-muted">Software Engineer</small>
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td><canvas id="areaChart_2" style="height:30px; max-width:130px;"></canvas></td>
-                                            <td>$124.66</td>
-                                            <td>Mar 09 2018</td>
+                                            <td>personal accident</td>
+                                            <td>124.66</td>
+                                            <td>Mar 09 2019</td>
                                         </tr>
                                         <tr>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    <div><img src="images/faces/face4.jpg" alt="profile image"></div>
+
                                                     <div class="ml-3">
                                                         <p class="mb-1">Mark C. Diaz</p>
-                                                        <small class="text-muted">Accountant</small>
+
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td><canvas id="areaChart_3" style="height:30px; max-width:130px;"></canvas></td>
-                                            <td>$763.00</td>
-                                            <td>Mar 10 2018</td>
+                                            <td>medical</td>
+                                            <td>763.00</td>
+                                            <td>Mar 10 2019</td>
                                         </tr>
                                         <tr>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    <div><img src="images/faces/face6.jpg" alt="profile image"></div>
+
                                                     <div class="ml-3">
                                                         <p class="mb-1">Margeret V. Ligon</p>
-                                                        <small class="text-muted">Software Engineer</small>
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td><canvas id="areaChart_4" style="height:30px; max-width:130px;"></canvas></td>
-                                            <td>$120.76</td>
-                                            <td>Mar 11 2018</td>
+                                            <td>General cover</td>
+                                            <td>120.76</td>
+                                            <td>Mar 11 2019</td>
                                         </tr>
                                         <tr>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    <div><img src="images/faces/face8.jpg" alt="profile image"></div>
+
                                                     <div class="ml-3">
                                                         <p class="mb-1">Messy max</p>
-                                                        <small class="text-muted">Personnel Lead</small>
+
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td><canvas id="areaChart_5" style="height:30px; max-width:130px;"></canvas></td>
-                                            <td>$450.20</td>
-                                            <td>Mar 12 2018</td>
+                                            <td>vehicle</td>
+                                            <td>450.20</td>
+                                            <td>Mar 12 2019</td>
                                         </tr>
                                     </table>
                                 </div>
@@ -579,7 +530,7 @@
                                             <div class="form-check">
                                                 <label class="form-check-label">
                                                     <input class="checkbox" type="checkbox">
-                                                    Meeting with Alisa
+                                                    Meeting with client A
                                                 </label>
                                             </div>
                                             <i class="remove mdi mdi-close-circle-outline"></i>
@@ -588,7 +539,7 @@
                                             <div class="form-check">
                                                 <label class="form-check-label">
                                                     <input class="checkbox" type="checkbox">
-                                                    Create invoice
+                                                    Call client x
                                                 </label>
                                             </div>
                                             <i class="remove mdi mdi-close-circle-outline"></i>
@@ -615,7 +566,7 @@
                                             <div class="form-check">
                                                 <label class="form-check-label">
                                                     <input class="checkbox" type="checkbox">
-                                                    Pick up kids from school
+                                                    meeting with client y
                                                 </label>
                                             </div>
                                             <i class="remove mdi mdi-close-circle-outline"></i>
@@ -631,8 +582,7 @@
             <!-- partial:partials/_footer.html -->
             <footer class="footer">
                 <div class="container-fluid clearfix">
-                    <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2018 <a href="http://www.urbanui.com/" target="_blank">urbanui</a>. All rights reserved.</span>
-                    <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i></span>
+                    <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2018 m-bima. All rights reserved.</span>
                 </div>
             </footer>
             <!-- partial -->

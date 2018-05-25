@@ -176,6 +176,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        // Add a provider for Dingo API
+        Dingo\Api\Provider\LaravelServiceProvider::class,
 
     ],
 

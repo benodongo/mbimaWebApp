@@ -19,3 +19,19 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/clients', 'HomeController@index')->name('clients');
+
+//API ROUTES
+$api = app('Dingo\Api\Routing\Router');
+$api->version('v1', function($api){
+    $api->post('newClient','App\Http\Controllers\ClientController@create');
+});
+$api->version('v1', function($api){
+    $api->post('register','App\Http\Controllers\LoginController@register');
+});
+$api->version('v1', function($api){
+    $api->post('login','App\Http\Controllers\LoginController@login');
+});
+
+$api->version('v1', function($api){
+    $api->post('register','App\Http\Controllers\LoginController@register');
+});

@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Pearl UI</title>
+    <title>mbima</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="assets/vendors/iconfonts/puse-icons-feather/feather.css">
@@ -27,8 +27,8 @@
             <div class="row w-100">
                 <div class="col-lg-4 mx-auto">
                     <div class="auth-form-light text-left p-5">
-                        <h2>Register</h2>
-                        <h4 class="font-weight-light">Hello! let's get started</h4>
+                        <h2>m-Bima</h2>
+                        <h4 class="font-weight-light">Register to get started</h4>
                         <form class="pt-4" method="POST" action="{{ route('register') }}">
                             {{ csrf_field() }}
                             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -93,7 +93,7 @@
                                 </div>
                             </div>
                             <div class="mt-2 text-center">
-                                <a href="login.html" class="auth-link text-black">Already have an account? <span class="font-weight-medium">Sign in</span></a>
+                                <a href="/" class="auth-link text-black">Already have an account? <span class="font-weight-medium">Sign in</span></a>
                             </div>
                         </form>
                     </div>
