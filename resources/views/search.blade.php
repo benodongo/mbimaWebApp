@@ -6,7 +6,7 @@
  * Time: 11:29 AM
  */
 ?>
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -463,54 +463,48 @@
             <div class="content-wrapper">
                 <div class="card">
                     <div class="card-body">
+                        @if(isset($details))
+                        <h4 class="card-title"> {{ $query }} Insurance Clients</h4>
+                        <div class="row">
+                            <div class="col-12">
 
-                            <h4 class="card-title">ALL CLIENTS</h4>
-                            <div class="row">
-                                <div class="col-12">
+                                <table id="order-listing" class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Expirty Date</th>
+                                        <th>Clinet Name</th>
+                                        <th>Policy No</th>
+                                        <th>Premium</th>
+                                        <th>Sum Insured</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach($details as $client)
+                                    <tr>
 
-                                    <table class="table table-striped">
-                                        <thead>
-                                        <tr>
-                                        <tr>
-                                            <th>
-                                                User
-                                            </th>
-                                            <th>
-                                                Full Names
-                                            </th>
-                                            <th>
-                                                Policy
-                                            </th>
-                                            <th>
-                                                Amount
-                                            </th>
-                                            <th>
-                                                Deadline
-                                            </th>
-                                        </tr>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        @foreach($clients as $client)
-                                            <tr>
+                                        <td>{{$client->id}}</td>
+                                        <td>{{$client->date}}</td>
+                                        <td>{{$client->first_name}}</td>
+                                        <td>{{$client->policy_number}}</td>
+                                        <td>KSH {{$client->premium}}</td>
+                                        <td>KSH 320,000</td>
+                                        <td>
+                                            <label class="badge badge-info">Active</label>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-outline-primary">View</button>
+                                        </td>
 
-                                                <td class="py-1">
-                                                    <img src="assets/images/faces-clipart/pic-1.png" alt="image"/>
-                                                </td>
-
-                                                <td>{{$client->first_name}} &nbsp;{{$client->last_name}}</td>
-                                                <td>{{$client->policy_type}}</td>
-                                                <td>KSH {{$client->premium}}</td>
-                                                <td>{{$client->date}}</td>
-
-
-                                            </tr>
-                                        @endforeach
-                                        </tbody>
-                                    </table>
-
-                                </div>
+                                    </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
+                                @endif
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>

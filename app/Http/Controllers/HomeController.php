@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Client;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,10 +24,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('welcome');
+        $clients = Client::all();
+        return view('welcome',compact('clients',$clients));
     }
     public function clients()
     {
-        return view('clients');
+        $clients = Client::all();
+        return view('clients',compact('clients',$clients));
     }
 }
