@@ -1,25 +1,31 @@
-<!DOCTYPE html>
+<?php
+/**
+ * Created by PhpStorm.
+ * User: benson
+ * Date: 6/6/18
+ * Time: 4:24 PM
+ */
+?>
+        <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>m-Bima</title>
+    <title>m - Bima</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="assets/vendors/iconfonts/puse-icons-feather/feather.css">
     <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.addons.css">
     <!-- endinject -->
-    <!-- plugin css for this page -->
-    <link rel="stylesheet" href="assets/vendors/iconfonts/font-awesome/css/font-awesome.min.css" />
-    <!-- End plugin css for this page -->
     <!-- inject:css -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="assets/images/favicon.png" />
 </head>
+
 <body>
 <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
@@ -137,27 +143,27 @@
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
         <!-- partial:partials/_settings-panel.html -->
-        {{--<div class="theme-setting-wrapper">--}}
-            {{--<div id="settings-trigger"><i class="mdi mdi-settings"></i></div>--}}
-            {{--<div id="theme-settings" class="settings-panel">--}}
-                {{--<i class="settings-close mdi mdi-close"></i>--}}
-                {{--<p class="settings-heading">SIDEBAR SKINS</p>--}}
-                {{--<div class="sidebar-bg-options selected" id="sidebar-light-theme"><div class="img-ss rounded-circle bg-light border mr-3"></div>Light</div>--}}
-                {{--<div class="sidebar-bg-options" id="sidebar-dark-theme"><div class="img-ss rounded-circle bg-dark border mr-3"></div>Dark</div>--}}
-                {{--<p class="settings-heading mt-2">HEADER SKINS</p>--}}
-                {{--<div class="color-tiles mx-0 px-4">--}}
-                    {{--<div class="tiles primary"></div>--}}
-                    {{--<div class="tiles success"></div>--}}
-                    {{--<div class="tiles warning"></div>--}}
-                    {{--<div class="tiles danger"></div>--}}
-                    {{--<div class="tiles pink"></div>--}}
-                    {{--<div class="tiles info"></div>--}}
-                    {{--<div class="tiles dark"></div>--}}
-                    {{--<div class="tiles default"></div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-        <!-- partial:partials/_sidebar.html -->
+    {{--<div class="theme-setting-wrapper">--}}
+    {{--<div id="settings-trigger"><i class="mdi mdi-settings"></i></div>--}}
+    {{--<div id="theme-settings" class="settings-panel">--}}
+    {{--<i class="settings-close mdi mdi-close"></i>--}}
+    {{--<p class="settings-heading">SIDEBAR SKINS</p>--}}
+    {{--<div class="sidebar-bg-options selected" id="sidebar-light-theme"><div class="img-ss rounded-circle bg-light border mr-3"></div>Light</div>--}}
+    {{--<div class="sidebar-bg-options" id="sidebar-dark-theme"><div class="img-ss rounded-circle bg-dark border mr-3"></div>Dark</div>--}}
+    {{--<p class="settings-heading mt-2">HEADER SKINS</p>--}}
+    {{--<div class="color-tiles mx-0 px-4">--}}
+    {{--<div class="tiles primary"></div>--}}
+    {{--<div class="tiles success"></div>--}}
+    {{--<div class="tiles warning"></div>--}}
+    {{--<div class="tiles danger"></div>--}}
+    {{--<div class="tiles pink"></div>--}}
+    {{--<div class="tiles info"></div>--}}
+    {{--<div class="tiles dark"></div>--}}
+    {{--<div class="tiles default"></div>--}}
+    {{--</div>--}}
+    {{--</div>--}}
+    {{--</div>--}}
+    <!-- partial:partials/_sidebar.html -->
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
             <ul class="nav">
                 <li class="nav-item nav-profile">
@@ -192,16 +198,31 @@
                 <li class="nav-item nav-category">
                     <span class="nav-link">Categories</span>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" aria-expanded="false" aria-controls="page-layouts">
+                        <i class="icon-box menu-icon"></i>
+                        <span class="menu-title">Policies</span>
+                        <i class="menu-arrow"></i>
+                    </a>
+                    <div class="collapse" id="page-layouts">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"> <a class="nav-link" >vehicle</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="#">General</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="#">Medical</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="#">Personal Accident</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="#">Other</a></li>
+                        </ul>
+                    </div>
+                </li>
                 <li class="nav-item nav-category">
                     <span class="nav-link"></span>
                 </li>
 
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/chart">
+                    <a class="nav-link" href="#">
                         <i class="icon-speech-bubble menu-icon"></i>
-                        <span class="menu-title">Reports</span>
+                        <span class="menu-title">Settings</span>
                         <span class="badge badge-info badge-pill">8</span>
                     </a>
                 </li>
@@ -219,151 +240,59 @@
                     </a>
             </ul>
         </nav>
-        <!-- partial -->
         <div class="main-panel">
             <div class="content-wrapper">
                 <div class="row">
-                    <div class="col-12 grid-margin stretch-card">
+                    <div class="col-lg-6 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body">
-                                <div class="row">
-                                    <div class="col-12 col-md-3 col-sm-6 mb-4 mb-md-0 border-right-md d-flex justify-content-between justify-content-md-center">
-                                        <div class="wrapper d-flex align-items-center justify-content-center">
-                                            <a href="/search?q=Vehicle"><div class="btn social-btn btn-twitter btn-rounded d-inline-block" style="height: 60px;width: 60px"></div></a>
-                                            <div class="wrapper d-flex flex-column ml-4">
-                                                <p class="font-weight-bold mb-2">Vehicle</p>
-                                                <p class="mb-0 text-muted">24</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-3 col-sm-6 mb-4 mb-md-0 border-right-md d-flex justify-content-between justify-content-md-center">
-                                        <div class="wrapper d-flex align-items-center justify-content-center">
-
-                                                <a href="/search?q=General Insurance"><div class="btn social-btn btn-facebook btn-rounded d-inline-block" style="height: 60px;width: 60px"></div></a>
-
-                                            <div class="wrapper d-flex flex-column ml-4">
-                                                <p class="font-weight-bold mb-2">General</p>
-                                                <p class="mb-0 text-muted">1,235</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-3 col-sm-6 mb-4 mb-md-0 border-right-md d-flex justify-content-between justify-content-md-center">
-                                        <div class="wrapper d-flex align-items-center justify-content-center">
-                                            <a href="/search?q=Medical"><div class="btn social-btn btn-google btn-rounded d-inline-block" style="height: 60px;width: 60px"></div></a>
-                                            <div class="wrapper d-flex flex-column ml-4">
-                                                <p class="font-weight-bold mb-2">Medical</p>
-                                                <p class="mb-0 text-muted">835</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-3 col-sm-6 d-flex justify-content-between justify-content-md-center">
-                                        <div class="wrapper d-flex align-items-center justify-content-center">
-                                            <a href="/search?q=Personal Accident"><div class="btn social-btn btn-warning btn-rounded d-inline-block" style="height: 60px;width: 60px"></div></a>
-                                            <div class="wrapper d-flex flex-column ml-4">
-                                                <p class="font-weight-bold mb-2">Personal Accident</p>
-                                                <p class="mb-0 text-muted">335</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <h4 class="card-title">Donut  Chart</h4>
+                                <div class="google-chart-container">
+                                    <div id="Donut-chart" class="google-charts"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Total clients per month</h4>
+                                <div class="google-chart-container d-flex align-items-center justify-content-center h-100">
+                                    <div id="Bar-chart" class="google-charts"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-9 grid-margin stretch-card">
+                    <div class="col-md-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Expiring Policies</h4>
-                                <div class="table-responsive">
-                                    <table id="order-listing" class="table">
-                                        <thead>
-                                        <tr>
-                                            <th><b>Expirty Date</b></th>
-                                            <th><b>Clinet Name</b></th>
-                                            <th><b>Policy No</b></th>
-                                            <th><b>Premium</b></th>
-                                            <th><b>Sum Insured</b></th>
-                                            <th><b>Actions</b></th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        @foreach($clients as $client)
-                                            <tr>
-
-                                                <td>{{$client->date}}</td>
-                                                <td>{{$client->first_name}}</td>
-                                                <td>{{$client->policy_number}}</td>
-                                                <td>KSH {{$client->premium}}</td>
-                                                <td>KSH 320,000</td>
-                                                <td>
-                                                    <button class="btn btn-outline-primary">View</button>
-                                                </td>
-
-                                            </tr>
-                                        @endforeach
-                                        </tbody>
-                                    </table>
+                                <h4 class="card-title">Histogram chart</h4>
+                                <div class="google-chart-container ">
+                                    <div id="Histogram-chart" class="google-charts"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 grid-margin stretch-card">
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Todo list</h4>
-                                <div class="add-items d-flex">
-                                    <input type="text" class="form-control todo-list-input"  placeholder="What do you need to do today?">
-                                    <button class="add btn btn-primary font-weight-bold todo-list-add-btn">Add</button>
+                                <h4 class="card-title">Donut  Chart</h4>
+                                <div class="google-chart-container">
+                                    <div id="area-chart" class="google-charts"></div>
                                 </div>
-                                <div class="list-wrapper">
-                                    <ul class="d-flex flex-column-reverse todo-list">
-                                        <li>
-                                            <div class="form-check">
-                                                <label class="form-check-label">
-                                                    <input class="checkbox" type="checkbox">
-                                                    Meeting with client A
-                                                </label>
-                                            </div>
-                                            <i class="remove mdi mdi-close-circle-outline"></i>
-                                        </li>
-                                        <li>
-                                            <div class="form-check">
-                                                <label class="form-check-label">
-                                                    <input class="checkbox" type="checkbox">
-                                                    Call client x
-                                                </label>
-                                            </div>
-                                            <i class="remove mdi mdi-close-circle-outline"></i>
-                                        </li>
-                                        <li>
-                                            <div class="form-check">
-                                                <label class="form-check-label">
-                                                    <input class="checkbox" type="checkbox">
-                                                    Print Statements
-                                                </label>
-                                            </div>
-                                            <i class="remove mdi mdi-close-circle-outline"></i>
-                                        </li>
-                                        <li class="completed">
-                                            <div class="form-check">
-                                                <label class="form-check-label">
-                                                    <input class="checkbox" type="checkbox" checked>
-                                                    Prepare for presentation
-                                                </label>
-                                            </div>
-                                            <i class="remove mdi mdi-close-circle-outline"></i>
-                                        </li>
-                                        <li>
-                                            <div class="form-check">
-                                                <label class="form-check-label">
-                                                    <input class="checkbox" type="checkbox">
-                                                    meeting with client y
-                                                </label>
-                                            </div>
-                                            <i class="remove mdi mdi-close-circle-outline"></i>
-                                        </li>
-                                    </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Curve Chart</h4>
+                                <div class="google-chart-container">
+                                    <div id="curve_chart"></div>
                                 </div>
                             </div>
                         </div>
@@ -371,12 +300,14 @@
                 </div>
             </div>
             <!-- content-wrapper ends -->
-            <!-- partial:partials/_footer.html -->
+            <!-- partial:assets/partials/_footer.html -->
+
             <footer class="footer">
                 <div class="container-fluid clearfix">
                     <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2018 m-bima. All rights reserved.</span>
                 </div>
             </footer>
+
             <!-- partial -->
         </div>
         <!-- main-panel ends -->
@@ -384,12 +315,11 @@
     <!-- page-body-wrapper ends -->
 </div>
 <!-- container-scroller -->
-
-<!-- plugins:js -->
 <script src="assets/vendors/js/vendor.bundle.base.js"></script>
 <script src="assets/vendors/js/vendor.bundle.addons.js"></script>
 <!-- endinject -->
 <!-- Plugin js for this page-->
+<script src="https://www.gstatic.com/charts/loader.js"></script>
 <!-- End plugin js for this page-->
 <!-- inject:js -->
 <script src="assets/js/off-canvas.js"></script>
@@ -399,12 +329,138 @@
 <script src="assets/js/todolist.js"></script>
 <!-- endinject -->
 <!-- Custom js for this page-->
-<script src="assets/js/dashboard.js"></script>
-<script src="assets/js/data-table.js"></script>
+<script src="assets/js/google-charts.js"></script>
 <!-- End custom js for this page-->
 <script>
+    var clientData = "{{ json_encode($info) }}";
+
+    clientData = JSON.parse(clientData.replace(/&quot;/g,'"'));
+
+    console.log(clientData);
+
+    google.charts.load('current', {
+        'packages': ['bar']
+    });
+    google.charts.setOnLoadCallback(drawStuff);
+
+    function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([
+            ['Months', 'Total Clients'],
+            ["Jan", 2],
+            ["Feb", 8],
+            ["Mar", 9],
+            ["April", 1],
+            ["May", clientData.clientMonthlyRecords.may],
+            ["June", clientData.clientMonthlyRecords.june],
+            ["July", 2],
+            ["Aug", 2],
+            ["Oct", 8],
+            ["Nov", 12],
+            ["Dec", 11],
+        ]);
+
+        var options = {
+            title: 'Approximating Normal Distribution',
+            legend: {
+                position: 'none'
+            },
+            colors: ['#76C1FA'],
+
+            chartArea: {
+                width: 401
+            },
+            hAxis: {
+                ticks: [-1, -0.75, -0.5, -0.25, 0, 0.25, 0.5, 0.75, 1]
+            },
+            bar: {
+                gap: 0
+            },
+
+            histogram: {
+                bucketSize: 0.02,
+                maxNumBuckets: 200,
+                minValue: -1,
+                maxValue: 1
+            }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('Bar-chart'));
+        chart.draw(data, options);
+    };
+    // Donut Chart Starts
+
+    google.charts.load("current", {
+        packages: ["corechart"]
+    });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Task', 'Hours per Day'],
+            ['Vehicle', clientData.policyTypes.vehicle],
+            ['Personal Accident', clientData.policyTypes.personal],
+            // ['Commute', 2],
+            // ['Watch TV', 2],
+            // ['Sleep', 7]
+        ]);
+
+        var options = {
+            title: 'Policy Types',
+            pieHole: 0.4,
+            colors: ['#76C1FA', '#63CF72', '#F36368', '#FABA66'],
+            chartArea: {
+                width: 500
+            },
+        };
+
+        var Donutchart = new google.visualization.PieChart(document.getElementById('Donut-chart'));
+        Donutchart.draw(data, options);
+    }
+
+
+    // Donut Chart Ends
+    // Histogram Charts Starts
+    (function($) {
+
+        google.charts.load("current", {
+            packages: ["corechart"]
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Vehicle', 'P . Accident', 'Medical', 'General'],
+                [clientData.categories.may.vehicle, clientData.categories.may.personal, 1, null],
+                [clientData.categories.june.vehicle, clientData.categories.june.personal, 1, null],
+                [-1 / 3, 0, null, null]
+            ]);
+
+            var options = {
+                title: 'policies',
+                legend: {
+                    position: 'top',
+                    maxLines: 1
+                },
+                colors: ['#76C1FA', '#63CF72', '#F36368', '#FABA66'],
+                interpolateNulls: false,
+                chartArea: {
+                    width: 401
+                },
+                vAxis: {title: "Total"},
+                hAxis: {title: "Months",ticks: [{v:2, f:"Jan"},{v:4, f:"Feb"},
+                        {v:6, f:"Mar"},{v:-0.25, f:"April"},{v:0, f:"May"},{v:0.25, f:"Jun"},{v:0.5, f:"July"},
+                        {v:0.75, f:"Aug"},{v:1, f:"Sept"}]} ,
+            };
+
+            var chart = new google.visualization.Histogram(document.getElementById('Histogram-chart'));
+            chart.draw(data, options);
+        }
+
+    })(jQuery);
+
+    // Histogram Charts Ends
+
 
 </script>
-</body>
 
 </html>

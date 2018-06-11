@@ -83,43 +83,43 @@ function drawStuff() {
 
 
 // Histogram Charts Starts
-(function($) {
-
-  google.charts.load("current", {
-    packages: ["corechart"]
-  });
-  google.charts.setOnLoadCallback(drawChart);
-
-  function drawChart() {
-    var data = google.visualization.arrayToDataTable([
-      ['Quarks', 'Leptons', 'Gauge Bosons', 'Scalar Bosons'],
-      [2 / 3, -1, 0, 0],
-      [2 / 3, -1, 0, null],
-      [2 / 3, -1, 0, null],
-      [-1 / 3, 0, 1, null],
-      [-1 / 3, 0, -1, null],
-      [-1 / 3, 0, null, null],
-      [-1 / 3, 0, null, null]
-    ]);
-
-    var options = {
-      title: 'Charges of subatomic particles',
-      legend: {
-        position: 'top',
-        maxLines: 2
-      },
-      colors: ['#76C1FA', '#63CF72', '#F36368', '#FABA66'],
-      interpolateNulls: false,
-      chartArea: {
-        width: 401
-      },
-    };
-
-    var chart = new google.visualization.Histogram(document.getElementById('Histogram-chart'));
-    chart.draw(data, options);
-  }
-
-})(jQuery);
+// (function($) {
+//
+//   google.charts.load("current", {
+//     packages: ["corechart"]
+//   });
+//   google.charts.setOnLoadCallback(drawChart);
+//
+//   function drawChart() {
+//     var data = google.visualization.arrayToDataTable([
+//       ['Quarks', 'Leptons', 'Gauge Bosons', 'Scalar Bosons'],
+//       [2 / 3, -1, 0, 0],
+//       [2 / 3, -1, 0, null],
+//       [2 / 3, -1, 0, null],
+//       [-1 / 3, 0, 1, null],
+//       [-1 / 3, 0, -1, null],
+//       [-1 / 3, 0, null, null],
+//       [-1 / 3, 0, null, null]
+//     ]);
+//
+//     var options = {
+//       title: 'Charges of subatomic particles',
+//       legend: {
+//         position: 'top',
+//         maxLines: 2
+//       },
+//       colors: ['#76C1FA', '#63CF72', '#F36368', '#FABA66'],
+//       interpolateNulls: false,
+//       chartArea: {
+//         width: 401
+//       },
+//     };
+//
+//     var chart = new google.visualization.Histogram(document.getElementById('Histogram-chart'));
+//     chart.draw(data, options);
+//   }
+//
+// })(jQuery);
 
 // Histogram Charts Ends
 

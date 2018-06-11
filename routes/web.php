@@ -12,6 +12,7 @@
 */
 use Illuminate\Support\Facades\Input;
 use App\Client;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -21,11 +22,16 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/clients', 'HomeController@clients')->name('clients');
+Route::get('/chart','HomeController@chart')->name('chart');
 //search
 Route::any('/search',function(){
     $q = Input::get ( 'q' );
-    $client = Client::where('first_name','LIKE','%'.$q.'%')->orWhere('policy_type','LIKE','%'.$q.'%')->get();
-    if(count($client) > 0)
+    $id = Auth::User()->id;
+    $client = Client::where('first_name','LIKE','%'.$q.'%')
+        ->orWhere('policy_type','LIKE','%'.$q.'%')
+        ->where('agent_id','=',$id)
+        ->get();
+    if(count($client) > 0 ) 
         return view('search')->withDetails($client)->withQuery ( $q );
     else return view ('search')->withMessage('No Details found. Try to search again !');
 });
