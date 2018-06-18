@@ -180,7 +180,6 @@
                     <a class="nav-link" href="/home">
                         <i class="icon-layout menu-icon"></i>
                         <span class="menu-title">Dashboard</span>
-                        <span class="badge badge-primary badge-pill">1</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -232,27 +231,27 @@
                                             <a href="/search?q=Vehicle"><div class="btn social-btn btn-twitter btn-rounded d-inline-block" style="height: 60px;width: 60px"></div></a>
                                             <div class="wrapper d-flex flex-column ml-4">
                                                 <p class="font-weight-bold mb-2">Vehicle</p>
-                                                <p class="mb-0 text-muted">24</p>
+                                                <p class="mb-0 text-muted">{{count(\App\Client::all()->where('agent_id','LIKE', Auth::User()->id)->where('policy_type','=','Vehicle'))}}</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-3 col-sm-6 mb-4 mb-md-0 border-right-md d-flex justify-content-between justify-content-md-center">
                                         <div class="wrapper d-flex align-items-center justify-content-center">
 
-                                                <a href="/search?q=General Insurance"><div class="btn social-btn btn-facebook btn-rounded d-inline-block" style="height: 60px;width: 60px"></div></a>
+                                                <a href="/search?q=General"><div class="btn social-btn btn-facebook btn-rounded d-inline-block" style="height: 60px;width: 60px"></div></a>
 
                                             <div class="wrapper d-flex flex-column ml-4">
                                                 <p class="font-weight-bold mb-2">General</p>
-                                                <p class="mb-0 text-muted">1,235</p>
+                                                <p class="mb-0 text-muted">{{count(\App\Client::all()->where('agent_id','LIKE', Auth::User()->id)->where('policy_type','=','General'))}}</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-3 col-sm-6 mb-4 mb-md-0 border-right-md d-flex justify-content-between justify-content-md-center">
                                         <div class="wrapper d-flex align-items-center justify-content-center">
-                                            <a href="/search?q=Medical"><div class="btn social-btn btn-google btn-rounded d-inline-block" style="height: 60px;width: 60px"></div></a>
+                                            <a href="/search?q=Health Insurance"><div class="btn social-btn btn-google btn-rounded d-inline-block" style="height: 60px;width: 60px"></div></a>
                                             <div class="wrapper d-flex flex-column ml-4">
                                                 <p class="font-weight-bold mb-2">Medical</p>
-                                                <p class="mb-0 text-muted">835</p>
+                                                <p class="mb-0 text-muted">{{count(\App\Client::all()->where('agent_id','LIKE', Auth::User()->id)->where('policy_type','=','Health Insurance'))}}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -261,7 +260,7 @@
                                             <a href="/search?q=Personal Accident"><div class="btn social-btn btn-warning btn-rounded d-inline-block" style="height: 60px;width: 60px"></div></a>
                                             <div class="wrapper d-flex flex-column ml-4">
                                                 <p class="font-weight-bold mb-2">Personal Accident</p>
-                                                <p class="mb-0 text-muted">335</p>
+                                                <p class="mb-0 text-muted">{{count(\App\Client::all()->where('agent_id','LIKE', Auth::User()->id)->where('policy_type','=','Personal Accident'))}}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -271,31 +270,37 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-9 grid-margin stretch-card">
+                    <div class="col-md-12 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Expiring Policies</h4>
                                 <div class="table-responsive">
-                                    <table id="order-listing" class="table">
-                                        <thead>
-                                        <tr>
-                                            <th><b>Expirty Date</b></th>
-                                            <th><b>Clinet Name</b></th>
+                                    <table id="order-listing" class="table table-striped " >
+                                        <thead style="background: rgba(2,10,22,0.77)">
+                                        <tr style="color: #ffffff">
+
+                                            <th><b>Client Name</b></th>
                                             <th><b>Policy No</b></th>
                                             <th><b>Premium</b></th>
                                             <th><b>Sum Insured</b></th>
+                                            <th>Purchase Date</th>
+                                            <th>Duration</th>
+                                            <th><b>Expiry Date</b></th>
                                             <th><b>Actions</b></th>
                                         </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody >
                                         @foreach($clients as $client)
-                                            <tr>
+                                            <tr >
 
-                                                <td>{{$client->date}}</td>
-                                                <td>{{$client->first_name}}</td>
+                                                <td>{{$client->first_name}} {{$client->last_name}}</td>
                                                 <td>{{$client->policy_number}}</td>
-                                                <td>KSH {{$client->premium}}</td>
-                                                <td>KSH 320,000</td>
+                                                <td>KSH {{number_format($client->premium,2)}}</td>
+                                                <td>KSH {{number_format($client->sum_insured,2)}}</td>
+                                                <td>{{ \Carbon\Carbon::parse($client->date)->toFormattedDateString()}}</td>
+                                                <td>{{$client->duration}}</td>
+
+                                                <td>{{ \Carbon\Carbon::parse($client->expiry_date)->toFormattedDateString()}}</td>
                                                 <td>
                                                     <button class="btn btn-outline-primary">View</button>
                                                 </td>
@@ -308,66 +313,66 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 grid-margin stretch-card">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Todo list</h4>
-                                <div class="add-items d-flex">
-                                    <input type="text" class="form-control todo-list-input"  placeholder="What do you need to do today?">
-                                    <button class="add btn btn-primary font-weight-bold todo-list-add-btn">Add</button>
-                                </div>
-                                <div class="list-wrapper">
-                                    <ul class="d-flex flex-column-reverse todo-list">
-                                        <li>
-                                            <div class="form-check">
-                                                <label class="form-check-label">
-                                                    <input class="checkbox" type="checkbox">
-                                                    Meeting with client A
-                                                </label>
-                                            </div>
-                                            <i class="remove mdi mdi-close-circle-outline"></i>
-                                        </li>
-                                        <li>
-                                            <div class="form-check">
-                                                <label class="form-check-label">
-                                                    <input class="checkbox" type="checkbox">
-                                                    Call client x
-                                                </label>
-                                            </div>
-                                            <i class="remove mdi mdi-close-circle-outline"></i>
-                                        </li>
-                                        <li>
-                                            <div class="form-check">
-                                                <label class="form-check-label">
-                                                    <input class="checkbox" type="checkbox">
-                                                    Print Statements
-                                                </label>
-                                            </div>
-                                            <i class="remove mdi mdi-close-circle-outline"></i>
-                                        </li>
-                                        <li class="completed">
-                                            <div class="form-check">
-                                                <label class="form-check-label">
-                                                    <input class="checkbox" type="checkbox" checked>
-                                                    Prepare for presentation
-                                                </label>
-                                            </div>
-                                            <i class="remove mdi mdi-close-circle-outline"></i>
-                                        </li>
-                                        <li>
-                                            <div class="form-check">
-                                                <label class="form-check-label">
-                                                    <input class="checkbox" type="checkbox">
-                                                    meeting with client y
-                                                </label>
-                                            </div>
-                                            <i class="remove mdi mdi-close-circle-outline"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {{--<div class="col-md-3 grid-margin stretch-card">--}}
+                        {{--<div class="card">--}}
+                            {{--<div class="card-body">--}}
+                                {{--<h4 class="card-title">Todo list</h4>--}}
+                                {{--<div class="add-items d-flex">--}}
+                                    {{--<input type="text" class="form-control todo-list-input"  placeholder="What do you need to do today?">--}}
+                                    {{--<button class="add btn btn-primary font-weight-bold todo-list-add-btn">Add</button>--}}
+                                {{--</div>--}}
+                                {{--<div class="list-wrapper">--}}
+                                    {{--<ul class="d-flex flex-column-reverse todo-list">--}}
+                                        {{--<li>--}}
+                                            {{--<div class="form-check">--}}
+                                                {{--<label class="form-check-label">--}}
+                                                    {{--<input class="checkbox" type="checkbox">--}}
+                                                    {{--Meeting with client A--}}
+                                                {{--</label>--}}
+                                            {{--</div>--}}
+                                            {{--<i class="remove mdi mdi-close-circle-outline"></i>--}}
+                                        {{--</li>--}}
+                                        {{--<li>--}}
+                                            {{--<div class="form-check">--}}
+                                                {{--<label class="form-check-label">--}}
+                                                    {{--<input class="checkbox" type="checkbox">--}}
+                                                    {{--Call client x--}}
+                                                {{--</label>--}}
+                                            {{--</div>--}}
+                                            {{--<i class="remove mdi mdi-close-circle-outline"></i>--}}
+                                        {{--</li>--}}
+                                        {{--<li>--}}
+                                            {{--<div class="form-check">--}}
+                                                {{--<label class="form-check-label">--}}
+                                                    {{--<input class="checkbox" type="checkbox">--}}
+                                                    {{--Print Statements--}}
+                                                {{--</label>--}}
+                                            {{--</div>--}}
+                                            {{--<i class="remove mdi mdi-close-circle-outline"></i>--}}
+                                        {{--</li>--}}
+                                        {{--<li class="completed">--}}
+                                            {{--<div class="form-check">--}}
+                                                {{--<label class="form-check-label">--}}
+                                                    {{--<input class="checkbox" type="checkbox" checked>--}}
+                                                    {{--Prepare for presentation--}}
+                                                {{--</label>--}}
+                                            {{--</div>--}}
+                                            {{--<i class="remove mdi mdi-close-circle-outline"></i>--}}
+                                        {{--</li>--}}
+                                        {{--<li>--}}
+                                            {{--<div class="form-check">--}}
+                                                {{--<label class="form-check-label">--}}
+                                                    {{--<input class="checkbox" type="checkbox">--}}
+                                                    {{--meeting with client y--}}
+                                                {{--</label>--}}
+                                            {{--</div>--}}
+                                            {{--<i class="remove mdi mdi-close-circle-outline"></i>--}}
+                                        {{--</li>--}}
+                                    {{--</ul>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
                 </div>
             </div>
             <!-- content-wrapper ends -->

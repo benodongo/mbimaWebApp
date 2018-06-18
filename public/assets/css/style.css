@@ -14507,7 +14507,7 @@ input:focus {
 
 /* Sidebar */
 .sidebar {
-  background: #ffffff;
+  background: #18151e;
   font-family: "Montserrat-regular", sans-serif;
   min-height: 100%;
   padding: 0;
@@ -14533,7 +14533,7 @@ input:focus {
       padding: 1rem 1.875rem;
       white-space: nowrap;
       height: 52px;
-      color: #000; }
+      color: #8287a9; }
       .sidebar .nav .nav-item .nav-link i {
         color: #09b76b; }
         .sidebar .nav .nav-item .nav-link i.menu-icon {
@@ -14739,7 +14739,7 @@ input:focus {
 /* Navbar */
 .navbar {
   font-family: "opensans-regular", sans-serif;
-  background: #ffffff;
+  background: #0f1531;
   -webkit-box-shadow: 0 8px 74px -29px rgba(0, 0, 0, 0.35);
   -moz-box-shadow: 0 8px 74px -29px rgba(0, 0, 0, 0.35);
   box-shadow: 0 8px 74px -29px rgba(0, 0, 0, 0.35);
@@ -14905,7 +14905,7 @@ input:focus {
       background: #f90000;
       color: #ffffff; }
   .navbar.navbar-success {
-    background: #09b76b; }
+    background: #1094f7; }
     .navbar.navbar-success .navbar-menu-wrapper input {
       color: #ffffff; }
       .navbar.navbar-success .navbar-menu-wrapper input:-ms-input-placeholder {

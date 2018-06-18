@@ -51,3 +51,15 @@ $api->version('v1', function($api){
 $api->version('v1', function($api){
     $api->post('register','App\Http\Controllers\LoginController@register');
 });
+//new premium
+$api->version('v1', function($api){
+    $api->post('newpremium','App\Http\Controllers\PremiumsController@store');
+});
+//get all clients
+$api->version('v1', function($api){
+    $api->post('getClients','App\Http\Controllers\ClientController@getClients');
+});
+//charts
+$api->version('v1', function($api){
+    $api->post('chart','App\Http\Controllers\ClientController@chart');
+});

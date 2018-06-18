@@ -37,19 +37,50 @@ class HomeController extends Controller
     public function chart()
     {
         $clients = Client::all()->where('agent_id','LIKE', Auth::User()->id);
-        $may = 0;
-        $june = 0;
+        $may = 0;$jan=0;$feb=0;$mar=0;$april=0;
+        $june = 0;$july=0;$aug=0;$sept=0;$oct=0;$nov=0;$dec=0;
 
         foreach ($clients as $client) {
 
-            if (Carbon::parse($client->date)->month == 5  ) {
+
+            if (Carbon::parse($client->date)->month == 1  ) {
+                ++$jan;
+            }  else if (Carbon::parse($client->date)->month == 2) {
+                ++$feb;
+            }
+            else if (Carbon::parse($client->date)->month == 3) {
+                ++$mar;
+            }
+            else if (Carbon::parse($client->date)->month == 4) {
+                ++$april;
+            }
+            else if (Carbon::parse($client->date)->month == 5) {
                 ++$may;
-            } else if (Carbon::parse($client->date)->month == 6) {
+            }
+            else if (Carbon::parse($client->date)->month == 6) {
                 ++$june;
+            }
+            else if (Carbon::parse($client->date)->month == 7) {
+                ++$july;
+            }
+            else if (Carbon::parse($client->date)->month == 8) {
+                ++$aug;
+            }
+            else if (Carbon::parse($client->date)->month == 9) {
+                ++$sept;
+            }
+            else if (Carbon::parse($client->date)->month == 10) {
+                ++$oct;
+            }
+            else if (Carbon::parse($client->date)->month == 11) {
+                ++$nov;
+            }
+            else if (Carbon::parse($client->date)->month == 12) {
+                ++$dec;
             }
         }
 
-        $vehicle  = 0; $personal = 0;
+        $vehicle  = 0; $personal = 0;$general=0; $health=0;
 
         foreach ($clients as $client) {
 
@@ -57,6 +88,12 @@ class HomeController extends Controller
                 ++$vehicle;
             } else if ($client->policy_type  == 'Personal Accident') {
                 ++$personal;
+            }
+            else if ($client->policy_type  == 'General') {
+                ++$general;
+            }
+            else if ($client->policy_type  == 'Health Insurance') {
+                ++$health;
             }
         }
         //categorize policies per month
@@ -95,9 +132,10 @@ class HomeController extends Controller
         }
         $categories = ["may"=>['may'=>$month5,'vehicle' =>$v5, 'personal' =>$p5],"june"=>['june'=>$month6, 'vehicle' =>$v6, 'personal' =>$p6]];
 
-        $policies = ['vehicle' => $vehicle, 'personal' => $personal];
+        $policies = ['vehicle' => $vehicle, 'personal' => $personal,'health'=>$health,'general'=>$general];
 
-        $data = ['may' => $may, 'june' => $june];
+        $data = ['jan'=>$jan,'feb'=>$feb,'mar'=>$mar,'april'=>$april,'may' => $may, 'june' => $june,
+            'july'=>$july,'aug'=>$aug,'sept'=>$sept,'oct'=>$oct,'nov'=>$nov,'dec'=>$dec];
 
         return view('chart')->with(['info' => ['clientMonthlyRecords' => $data, 'policyTypes' => $policies, 'categories'=>$categories]]);
     }

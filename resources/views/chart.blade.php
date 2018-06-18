@@ -198,31 +198,16 @@
                 <li class="nav-item nav-category">
                     <span class="nav-link">Categories</span>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" aria-expanded="false" aria-controls="page-layouts">
-                        <i class="icon-box menu-icon"></i>
-                        <span class="menu-title">Policies</span>
-                        <i class="menu-arrow"></i>
-                    </a>
-                    <div class="collapse" id="page-layouts">
-                        <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link" >vehicle</a></li>
-                            <li class="nav-item"> <a class="nav-link" href="#">General</a></li>
-                            <li class="nav-item"> <a class="nav-link" href="#">Medical</a></li>
-                            <li class="nav-item"> <a class="nav-link" href="#">Personal Accident</a></li>
-                            <li class="nav-item"> <a class="nav-link" href="#">Other</a></li>
-                        </ul>
-                    </div>
-                </li>
+
                 <li class="nav-item nav-category">
                     <span class="nav-link"></span>
                 </li>
 
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="/chart">
                         <i class="icon-speech-bubble menu-icon"></i>
-                        <span class="menu-title">Settings</span>
+                        <span class="menu-title">Reports</span>
                         <span class="badge badge-info badge-pill">8</span>
                     </a>
                 </li>
@@ -246,7 +231,7 @@
                     <div class="col-lg-6 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Donut  Chart</h4>
+                                <h4 class="card-title">Policies</h4>
                                 <div class="google-chart-container">
                                     <div id="Donut-chart" class="google-charts"></div>
                                 </div>
@@ -346,17 +331,18 @@
     function drawStuff() {
         var data = new google.visualization.arrayToDataTable([
             ['Months', 'Total Clients'],
-            ["Jan", 2],
-            ["Feb", 8],
-            ["Mar", 9],
-            ["April", 1],
+            ["Jan", clientData.clientMonthlyRecords.jan],
+            ["Feb", clientData.clientMonthlyRecords.feb],
+            ["Mar", clientData.clientMonthlyRecords.mar],
+            ["April", clientData.clientMonthlyRecords.april],
             ["May", clientData.clientMonthlyRecords.may],
             ["June", clientData.clientMonthlyRecords.june],
-            ["July", 2],
-            ["Aug", 2],
-            ["Oct", 8],
-            ["Nov", 12],
-            ["Dec", 11],
+            ["July", clientData.clientMonthlyRecords.july],
+            ["Aug", clientData.clientMonthlyRecords.aug],
+            ["Aug", clientData.clientMonthlyRecords.sept],
+            ["Oct", clientData.clientMonthlyRecords.oct],
+            ["Nov", clientData.clientMonthlyRecords.nov],
+            ["Dec", clientData.clientMonthlyRecords.dec],
         ]);
 
         var options = {
@@ -399,8 +385,8 @@
             ['Task', 'Hours per Day'],
             ['Vehicle', clientData.policyTypes.vehicle],
             ['Personal Accident', clientData.policyTypes.personal],
-            // ['Commute', 2],
-            // ['Watch TV', 2],
+            ['General Insurance', clientData.policyTypes.general],
+            ['Medical Cover', clientData.policyTypes.health],
             // ['Sleep', 7]
         ]);
 
