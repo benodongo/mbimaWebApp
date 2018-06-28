@@ -59,6 +59,9 @@ $api->version('v1', function($api){
 $api->version('v1', function($api){
     $api->post('getClients','App\Http\Controllers\ClientController@getClients');
 });
+$api->version('v1', function($api){
+    $api->post('getSpecific','App\Http\Controllers\ClientController@getSpecific');
+});
 //charts
 $api->version('v1', function($api){
     $api->post('chart','App\Http\Controllers\ClientController@chart');
